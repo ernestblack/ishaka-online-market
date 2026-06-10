@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    Student Dashboard
+  </title>
+
+  <link
+    rel="stylesheet"
+    href="css/style.css"
+  >
+
+</head>
+<body>
+
+  <!-- MENU BUTTON -->
+  <button id="menuBtn">☰</button>
+
+  <!-- SIDEBAR -->
+  <div id="sidebar">
+
+    <h3>Student Menu</h3>
+
+    <button id="cartBtn">
+      My Cart
+    </button>
+
+    <button id="ordersBtn">
+      My Orders
+    </button>
+
+    <button id="logoutBtn">
+      Logout
+    </button>
+
+  </div>
+
+<!-- SEARCH -->
+<div class="search-container">
+
+  <input
+    type="text"
+    id="searchInput"
+    placeholder="🔍 Search products..."
+  >
+
+</div>
+
+<!-- CATEGORIES -->
+<div class="categories">
+
+  <div class="category-card" data-category="groceries">
+  <img
+    src="groceries.jpg"
+    alt="Groceries"
+    class="category-img"
+  >
+  <span>Groceries</span>
+</div>
+
+<div class="category-card" data-category="essentials">
+  <img
+    src="essentials.jpg"
+    alt="Essentials"
+    class="category-img"
+  >
+  <span>Essentials</span>
+</div>
+
+<div class="category-card" data-category="electronics">
+  <img
+    src="gadgets.jpg"
+    alt="Electronics"
+    class="category-img"
+  >
+  <span>Electronics</span>
+</div>
+
+<div class="category-card" data-category="fashion">
+  <img
+    src="fashion.jpg"
+    alt="Fashion"
+    class="category-img"
+  >
+  <span>Fashion</span>
+</div>
+
+</div>
+
+<!-- PRODUCTS -->
+<div id="productsContainer"></div>
+
+  <script
+    type="module"
+    src="js/auth.js"
+  ></script>
+
+  <script
+    type="module"
+    src="js/cart.js"
+  ></script>
+
+</body>
+
+</html>

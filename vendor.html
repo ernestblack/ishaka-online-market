@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en"><head>  <meta charset="UTF-8"><meta
+name="viewport"
+content="width=device-width, initial-scale=1.0"
+
+«»
+
+  <title>
+  </title>  <link
+    rel="stylesheet"
+    href="css/style.css"
+  ></head>
+  <body>  <button id="menuBtn">
+    ☰
+  </button>  <div id="sidebar"><h3>
+  Vendor Panel
+</h3>
+
+<button id="dashboardBtn">
+  Dashboard
+</button>
+
+<button id="productsBtn">
+  My Products
+</button>
+
+<button id="vendorOrdersBtn">
+  Incoming Orders
+</button>
+
+<button id="statsBtn">
+  Statistics
+</button>
+
+<button id="logoutBtn">
+  Logout
+</button>
+
+  </div>  <h1 class="cart-header">
+  </h1> 
+  <div id="dashboardSection">
+
+  <div class="vendor-card">
+
+    <h2>Vendor Dashboard</h2>
+
+    <p>Welcome Vendor</p>
+
+    <p>
+      Use the sidebar to manage products and orders.
+    </p>
+
+  </div>
+
+</div>
+
+
+<div id="addProductSection">
+
+  <div class="vendor-card">
+
+    <h2>Add Product</h2>
+
+    <input
+      type="text"
+      id="productName"
+      placeholder="Product Name"
+    >
+
+    <textarea
+      id="productDescription"
+      placeholder="Product Description"
+    ></textarea>
+
+    <input
+      type="number"
+      id="productPrice"
+      placeholder="Price"
+    >
+<input
+  type="file"
+  id="productImage"
+  accept="image/*"
+>
+    <button id="addProductBtn">
+      Add Product
+    </button>
+
+  </div>
+
+</div>
+
+
+<div id="productsSection">
+
+  <h2 class="section-title">
+    My Products
+  </h2>
+
+  <div id="productsContainer"></div>
+
+</div>
+
+
+<div id="ordersSection">
+
+  <h2 class="section-title">
+    Incoming Orders
+  </h2>
+
+  <div id="vendorOrdersContainer"></div>
+
+</div>
+  <script
+    type="module"
+    src="js/auth.js"
+  ></script>  <script
+    type="module"
+    src="js/vendor.js"
+  ></script></body>
+  </html>

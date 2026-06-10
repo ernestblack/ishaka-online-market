@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>
+    My Orders
+  </title>
+  <link
+  rel="stylesheet"
+  href="css/style.css"
+>
+
+</head>
+
+<body>
+
+<h1 class="cart-header">
+  My Orders
+</h1>
+
+  <div id="ordersContainer">
+
+</div>
+  <div
+  id="deliverySection"
+  style="display:none;"
+>
+
+  <h2>
+    Delivery Details
+  </h2>
+
+  <input
+    id="phoneNumber"
+    type="text"
+    placeholder="Phone Number"
+  >
+
+  <br><br>
+
+  <input
+    id="deliveryLocation"
+    type="text"
+    placeholder="Delivery Location"
+  >
+
+  <br><br>
+
+  <select
+    id="paymentMethod"
+  >
+
+    <option value="">
+      Select Payment Method
+    </option>
+
+    <option value="Cash">
+      Cash
+    </option>
+
+    <option value="Mobile Money">
+      Mobile Money
+    </option>
+
+  </select>
+
+  <br><br>
+
+  <button
+    id="submitDeliveryBtn"
+  >
+    Confirm Delivery Details
+  </button>
+
+</div>
+
+  <script
+    type="module"
+    src="js/orders.js"
+  ></script>
+
+</body>
+
+</html>
