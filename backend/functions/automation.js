@@ -104,11 +104,66 @@ async function checkAcceptedOrders() {
 
 }
 
+async function checkDeliveredOrders() {
+
+  console.log(
+    "Checking delivered orders..."
+  );
+
+  const snapshot =
+    await db.collection("Orders").get();
+
+  const now = Date.now();
+
+  const twentyFourHours =
+    5 * 60 * 1000;
+
+  for (const orderDoc of snapshot.docs) {
+
+    const order =
+      orderDoc.data();
+
+    if (
+      order.status === "delivered" &&
+      order.deliveredAt
+    ) {
+
+      const deliveredTime =
+        order.deliveredAt.toDate().getTime();
+
+      if (
+        now - deliveredTime >
+        twentyFourHours
+      ) {
+
+        await orderDoc.ref.update({
+
+          status:
+            "completed",
+
+          autoCompletedAt:
+            new Date()
+
+        });
+
+        console.log(
+          `Auto completed: ${orderDoc.id}`
+        );
+
+      }
+
+    }
+
+  }
+
+}
 async function runAutomation() {
 
-  await checkPendingOrders();
+ await checkPendingOrders();
 
-  await checkAcceptedOrders();
+await checkAcceptedOrders();
+
+await checkDeliveredOrders();
 
 }
 
