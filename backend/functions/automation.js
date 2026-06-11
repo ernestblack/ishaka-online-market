@@ -115,8 +115,8 @@ async function checkDeliveredOrders() {
 
   const now = Date.now();
 
-  const twentyFourHours =
-    5 * 60 * 1000;
+ const tweleveHours =
+  12 * 60 * 60 * 1000;
 
   for (const orderDoc of snapshot.docs) {
 
@@ -133,7 +133,7 @@ async function checkDeliveredOrders() {
 
       if (
         now - deliveredTime >
-        twentyFourHours
+        tweleveHours
       ) {
 
         await orderDoc.ref.update({
