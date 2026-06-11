@@ -50,4 +50,66 @@ const fourHours = 4 * 60 * 60 * 1000;
 
 }
 
-checkPendingOrders();
+async function checkAcceptedOrders() {
+
+  console.log(
+    "Checking accepted orders..."
+  );
+
+  const snapshot =
+    await db.collection("Orders").get();
+
+  const now = Date.now();
+
+  const sixHours =
+    5 * 60 * 1000;
+
+  for (const orderDoc of snapshot.docs) {
+
+    const order =
+      orderDoc.data();
+
+    if (
+      order.status === "accepted" &&
+      order.acceptedAt
+    ) {
+
+      const acceptedTime =
+        order.acceptedAt.toDate().getTime();
+
+      if (
+        now - acceptedTime >
+        sixHours
+      ) {
+
+        await orderDoc.ref.update({
+
+          status:
+            "vendor_unresponsive",
+
+          vendorUnresponsiveAt:
+            new Date()
+
+        });
+
+        console.log(
+          `Vendor unresponsive: ${orderDoc.id}`
+        );
+
+      }
+
+    }
+
+  }
+
+}
+
+async function runAutomation() {
+
+  await checkPendingOrders();
+
+  await checkAcceptedOrders();
+
+}
+
+runAutomation();
