@@ -9,7 +9,7 @@ async function checkPendingOrders() {
 
   const now = Date.now();
 
-const fourHours = 5 * 60 * 1000;
+const fourHours = 4 * 60 * 60 * 1000;
 
   for (const orderDoc of snapshot.docs) {
 
