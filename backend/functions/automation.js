@@ -61,8 +61,8 @@ async function checkAcceptedOrders() {
 
   const now = Date.now();
 
-  const sixHours =
-    5 * 60 * 1000;
+ const sixHours =
+  6 * 60 * 60 * 1000;
 
   for (const orderDoc of snapshot.docs) {
 
